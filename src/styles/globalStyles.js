@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 // Used for wrapping a page component
 export const Screen = styled.div`
-  background-color: #28282B;
+  
   background-image: ${({ image }) => (image ? `url(${image})` : "none")};
   background-size: cover;
   background-position: center;
@@ -57,7 +57,7 @@ export const Container1 = styled.div`
   align-items: ${({ ai }) => (ai ? ai : "flex-start")};
   background-color: ${({ test }) => (test ? "pink" : "none")};
   width: 100%;
-  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0, 0, 0, 0.1)),url("/config/images/back.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0, 0, 0, 0.1));
   background-size: cover;
 
   @media (max-width:1386px) {

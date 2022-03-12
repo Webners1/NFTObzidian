@@ -12,13 +12,14 @@ export const StyledButton = styled.button`
   padding: 10px;
   border-radius: 50px;
   border: none;
-  background-color: var(--secondary);
+  background-color: "white";
   padding: 10px;
-  font-weight: bold;
-  font-size:22px;
-  color: var(--secondary-text);
-  width: 150px;
-  height:60px;
+  font-weight: 700;
+  font-size:25px;
+  font-family:'unset';
+  width: 280px;
+  height:80px;
+  color: "black";
   cursor: pointer;
   box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
   -webkit-box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
@@ -38,6 +39,8 @@ export const StyledRoundButton = styled.button`
   padding: 10px;
   font-weight: bold;
   font-size: 15px;
+  font-family:'unset';
+
   color: var(--primary-text);
   width: 30px;
   height: 30px;
@@ -64,6 +67,33 @@ export const ResponsiveWrapper = styled.div`
   width: 100%;
   @media (min-width: 767px) {
     flex-direction: row;
+    padding:10px;
+  }
+`;
+export const ResponsiveWrapper1 = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: stretched;
+  align-items: stretched;
+  width: 100%;
+  @media (min-width: 767px) {
+    flex-direction: column;
+    padding:10px;
+  }
+`;
+export const ResponsiveWrapper2 = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  align-items: flex-end;
+  width: 800px;
+  @media (max-width: 950px) {
+    flex-direction: column;
+    padding:10px;
+  width: 100%;
+    
   }
 `;
 
@@ -77,16 +107,14 @@ export const StyledLogo = styled.img`
 `;
 
 export const StyledImg = styled.img`
-  box-shadow: 0px 5px 11px 2px rgba(0, 0, 0, 0.7);
-  border: 4px var(--secondary);
-  background-color: var(--accent);
-  border-radius: 10%;
-  width: 350px;
+  width: 200px;
   @media (min-width: 900px) {
     width: 340px;
+  x
   }
   @media (min-width: 1000px) {
-    width: 390px;
+    width: 290px;
+
   }
   transition: width 0.5s;
 `;
@@ -196,48 +224,88 @@ function App() {
   }, [blockchain.account]);
 
   return (
-    <s.Screen>
+    <s.Screen
+    image="./config/images/background.jpg">
       <s.Container
         flex={1}
         ai={"center"}
        
-      style={{ padding: 24, }}
+      style={{ padding: 16, }}
         image={null}
         height="10%"
       >
+           <s.Container jc={"center"} ai={"center"} style={{display:"flex",justifyContent:'flex-end',alignItems:'flex-end', flexDirection:"row"}}>
+        <SocialIcon network="twitter" fgColor="blacks" bgColor="white" style={{margin:"10px"}}/>
+        <SocialIcon network="discord" fgColor="blacks" bgColor="white" style={{margin:"10px"}}/>
+        <SocialIcon network="facebook" fgColor="blacks" bgColor="white" style={{margin:"10px"}}/>
+        <SocialIcon network="telegram" fgColor="blacks" bgColor="white" style={{margin:"10px"}}/>
         
+        </s.Container>
         <s.SpacerSmall />
-        <ResponsiveWrapper flex={2} style={{ padding: 24 }} test>
-          <s.Container flex={1} jc={"center"} ai={"center"}>
-            <StyledImg alt={"example"} src={"/config/images/example.jpg"} />
-          </s.Container>
-          
+        <ResponsiveWrapper style={{ padding: 15 }} test>
+        
+        <ResponsiveWrapper style={{ padding: 15 }} test>
+          </ResponsiveWrapper>
           <s.SpacerLarge />
-          
-          <s.Container1
-            flex={2}
-            jc={"center"}
-            ai={"center"}
-            
-            style={{
-             
-              padding: 24,
-              borderRadius: 24,
-              border: "4px var(--secondary)",
-              boxShadow: "0px 5px 11px 2px rgba(0,0,0,0.7)",
-            }}
-          >
-          
+       
+          <s.Container>
+          <ResponsiveWrapper1 flex={1} style={{padding: 15 }} test>
+  <StyledImg src='./config/images/logo.png'/>
+ 
+  <s.SpacerSmall />
+
+  <s.TextTitle
+    style={{
+      textAlign: "center",
+      fontSize: 50,
+      fontWeight: "bold",
+      color: "var(--accent-text)",
+      width:'100%',
+    }}>
+    OBZIDIAN
+  </s.TextTitle>
+  <s.TextTitle
+    style={{
+      textAlign: "center",
+      fontSize: 30,
+      fontWeight: "bold",
+      color: "var(--accent-text)",
+      width:'100%',
+    }}>
+    OBZIDIAN
+  </s.TextTitle>
+</ResponsiveWrapper1>
+</s.Container>
+       <s.Container>
+       <ResponsiveWrapper2 flex={1} style={{display:'flex',flexDirection:'column',alignItems:'flex-end', padding: 24}} test>
             <s.TextTitle
               style={{
                 textAlign: "center",
-                fontSize: 60,
+                fontSize: 70,
+                fontFamily:'unset',
+letterSpacing:'10px',
+      fontWeight: "200",
                 fontWeight: "bold",
                 color: "var(--accent-text)",
+                width:'100%',
               }}
             >
-              {data.totalSupply} / {CONFIG.MAX_SUPPLY}
+              {/* {data.totalSupply} */}
+              10000
+               / {CONFIG.MAX_SUPPLY}
             </s.TextTitle>
+            <s.TextTitle
+    style={{
+      textAlign: "center",
+      fontSize: 60,
+fontFamily:'unset',
+letterSpacing:'8px',
+      fontWeight: "800",
+      color: "var(--accent-text)",
+      width:'100%',
+    }}>
+    MINTED
+  </s.TextTitle>
             <s.TextDescription
               style={{
                 textAlign: "center",
@@ -268,13 +336,7 @@ function App() {
               </>
             ) : (
               <>
-                <s.TextTitle
-                  style={{ textAlign: "center", color: "var(--accent-text)" }}
-                >
-                  1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
-                  {CONFIG.NETWORK.SYMBOL}.
-                </s.TextTitle>
-                <s.SpacerXSmall />
+               
                 
                 
                 {blockchain.account === "" ||
@@ -366,30 +428,22 @@ function App() {
                       >
                         {claimingNft ? "BUSY" : "BUY"}
                       </StyledButton>
+
                     </s.Container>
                   </>
                 )}
               </>
             )}
             <s.SpacerMedium />
-          </s.Container1>
+            </ResponsiveWrapper2>
+            </s.Container>
+       
           <s.SpacerLarge />
-          <s.Container flex={1} jc={"center"} ai={"center"}>
-            <StyledImg
-              alt={"example"}
-              src={"/config/images/example.jpg"}
-              style={{ transform: "scaleX(-1)" }}
-            />
-          </s.Container>
+          
         </ResponsiveWrapper>
         <s.SpacerMedium />
 
-        <s.Container jc={"center"} ai={"center"} style={{display:"flex", flexDirection:"row"}}>
-        <SocialIcon network="twitter" bgColor="var(--secondary)" style={{margin:"10px"}}/>
-        <SocialIcon network="discord" bgColor="var(--secondary)" style={{margin:"10px"}}/>
-        <SocialIcon network="facebook" bgColor="var(--secondary)" style={{margin:"10px"}}/>
-        <SocialIcon network="telegram" bgColor="var(--secondary)" style={{margin:"10px"}}/>
-        </s.Container>
+     
         <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
           <s.TextDescription
             style={{
