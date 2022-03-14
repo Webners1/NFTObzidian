@@ -2,9 +2,9 @@
   "CONTRACT_ADDRESS": "",
   "SCAN_LINK": "https://bscscan.com/address/0xa786abB977CAB14f464ea745FF798F174b55a104",
   "NETWORK": {
-    "NAME": "BSC",
-    "SYMBOL": "BNB",
-    "ID": 56
+    "NAME": "Polygon",
+    "SYMBOL": "Polygon",
+    "ID": 1
   },
   "NFT_NAME": "Obzidian",
   "SYMBOL": "Obzidian",

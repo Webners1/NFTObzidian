@@ -113,7 +113,7 @@ export const StyledImg = styled.img`
   x
   }
   @media (min-width: 1000px) {
-    width: 290px;
+    width: 590px;
 
   }
   transition: width 0.5s;
@@ -250,30 +250,12 @@ function App() {
        
           <s.Container>
           <ResponsiveWrapper1 flex={1} style={{padding: 15 }} test>
-  <StyledImg src='./config/images/logo.png'/>
+  <StyledImg src='./config/images/lambda.png'/>
  
   <s.SpacerSmall />
 
-  <s.TextTitle
-    style={{
-      textAlign: "center",
-      fontSize: 50,
-      fontWeight: "bold",
-      color: "var(--accent-text)",
-      width:'100%',
-    }}>
-    OBZIDIAN
-  </s.TextTitle>
-  <s.TextTitle
-    style={{
-      textAlign: "center",
-      fontSize: 30,
-      fontWeight: "bold",
-      color: "var(--accent-text)",
-      width:'100%',
-    }}>
-    OBZIDIAN
-  </s.TextTitle>
+
+  
 </ResponsiveWrapper1>
 </s.Container>
        <s.Container>
@@ -290,8 +272,8 @@ letterSpacing:'10px',
                 width:'100%',
               }}
             >
-              {/* {data.totalSupply} */}
-              10000
+              {data.totalSupply}
+            
                / {CONFIG.MAX_SUPPLY}
             </s.TextTitle>
             <s.TextTitle
