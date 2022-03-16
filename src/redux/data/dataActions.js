@@ -24,6 +24,9 @@ const fetchDataFailed = (payload) => {
 export const fetchData = () => {
   return async (dispatch) => {
     dispatch(fetchDataRequest());
+    console.log(store
+      .getState()
+      .blockchain.smartContract)
     try {
       let totalSupply = await store
         .getState()

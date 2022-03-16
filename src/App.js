@@ -35,15 +35,17 @@ export const StyledRoundButton = styled.button`
   padding: 10px;
   border-radius: 100%;
   border: none;
-  background-color: var(--primary);
+  background-color: "white";
   padding: 10px;
   font-weight: bold;
-  font-size: 15px;
+  color: "black";
+  font-size: 45px;
   font-family:'unset';
 
-  color: var(--primary-text);
-  width: 30px;
-  height: 30px;
+align-item:center;
+justify-content:center;
+  width: 45px;
+  height: 45px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -98,7 +100,7 @@ export const ResponsiveWrapper2 = styled.div`
 `;
 
 export const StyledLogo = styled.img`
-  width: 200px;
+  width: 500px;
   @media (min-width: 767px) {
     width: 300px;
   }
@@ -107,9 +109,9 @@ export const StyledLogo = styled.img`
 `;
 
 export const StyledImg = styled.img`
-  width: 200px;
+  width: 400px;
   @media (min-width: 900px) {
-    width: 340px;
+    width: 540px;
   x
   }
   @media (min-width: 1000px) {
@@ -129,7 +131,7 @@ function App() {
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
-  const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
+  const [feedback, setFeedback] = useState(``);
   const [mintAmount, setMintAmount] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
@@ -288,16 +290,7 @@ letterSpacing:'8px',
     }}>
     MINTED
   </s.TextTitle>
-            <s.TextDescription
-              style={{
-                textAlign: "center",
-                color: "var(--primary-text)",
-              }}
-            >
-              <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
-                {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
-              </StyledLink>
-            </s.TextDescription>
+          
             <s.SpacerSmall />
             {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
               <>
@@ -408,7 +401,7 @@ letterSpacing:'8px',
                           getData();
                         }}
                       >
-                        {claimingNft ? "BUSY" : "BUY"}
+                        {claimingNft ? "BUSY" : "MINT"}
                       </StyledButton>
 
                     </s.Container>

@@ -67,7 +67,7 @@ export const connect = () => {
             abi,
             CONFIG.CONTRACT_ADDRESS
           );
-          
+          console.log(SmartContractObj)
           dispatch(
             connectSuccess({
               account: accounts[0],
