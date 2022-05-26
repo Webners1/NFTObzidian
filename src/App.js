@@ -83,6 +83,13 @@ export const ResponsiveWrapper1 = styled.div`
     flex-direction: column;
     padding:10px;
   }
+  @media (max-width: 950px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  width: 100%;
+  }
 `;
 export const ResponsiveWrapper2 = styled.div`
   display: flex;
@@ -95,7 +102,6 @@ export const ResponsiveWrapper2 = styled.div`
     flex-direction: column;
     padding:10px;
   width: 100%;
-    
   }
 `;
 
